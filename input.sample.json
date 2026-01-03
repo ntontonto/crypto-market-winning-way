@@ -1,0 +1,561 @@
+{
+    "asOf": "2026-01-02T00:00:00Z",
+    "currency": "usd",
+    "top10_7d": [
+        {
+            "date": "2025-12-27",
+            "items": [
+                {
+                    "id": "bitcoin",
+                    "symbol": "BTC",
+                    "name": "Bitcoin",
+                    "market_cap": 1100000000000
+                },
+                {
+                    "id": "ethereum",
+                    "symbol": "ETH",
+                    "name": "Ethereum",
+                    "market_cap": 500000000000
+                },
+                {
+                    "id": "tether",
+                    "symbol": "USDT",
+                    "name": "Tether",
+                    "market_cap": 90000000000
+                },
+                {
+                    "id": "bnb",
+                    "symbol": "BNB",
+                    "name": "BNB",
+                    "market_cap": 80000000000
+                },
+                {
+                    "id": "solana",
+                    "symbol": "SOL",
+                    "name": "Solana",
+                    "market_cap": 75000000000
+                },
+                {
+                    "id": "xrp",
+                    "symbol": "XRP",
+                    "name": "XRP",
+                    "market_cap": 40000000000
+                },
+                {
+                    "id": "usdc",
+                    "symbol": "USDC",
+                    "name": "USDC",
+                    "market_cap": 35000000000
+                },
+                {
+                    "id": "cardano",
+                    "symbol": "ADA",
+                    "name": "Cardano",
+                    "market_cap": 25000000000
+                },
+                {
+                    "id": "avalanche",
+                    "symbol": "AVAX",
+                    "name": "Avalanche",
+                    "market_cap": 20000000000
+                },
+                {
+                    "id": "dogecoin",
+                    "symbol": "DOGE",
+                    "name": "Dogecoin",
+                    "market_cap": 18000000000
+                }
+            ]
+        },
+        {
+            "date": "2025-12-28",
+            "items": [
+                {
+                    "id": "bitcoin",
+                    "symbol": "BTC",
+                    "name": "Bitcoin",
+                    "market_cap": 1120000000000
+                },
+                {
+                    "id": "ethereum",
+                    "symbol": "ETH",
+                    "name": "Ethereum",
+                    "market_cap": 510000000000
+                },
+                {
+                    "id": "tether",
+                    "symbol": "USDT",
+                    "name": "Tether",
+                    "market_cap": 91000000000
+                },
+                {
+                    "id": "solana",
+                    "symbol": "SOL",
+                    "name": "Solana",
+                    "market_cap": 82000000000
+                },
+                {
+                    "id": "bnb",
+                    "symbol": "BNB",
+                    "name": "BNB",
+                    "market_cap": 79000000000
+                },
+                {
+                    "id": "xrp",
+                    "symbol": "XRP",
+                    "name": "XRP",
+                    "market_cap": 41000000000
+                },
+                {
+                    "id": "usdc",
+                    "symbol": "USDC",
+                    "name": "USDC",
+                    "market_cap": 36000000000
+                },
+                {
+                    "id": "cardano",
+                    "symbol": "ADA",
+                    "name": "Cardano",
+                    "market_cap": 26000000000
+                },
+                {
+                    "id": "dogecoin",
+                    "symbol": "DOGE",
+                    "name": "Dogecoin",
+                    "market_cap": 22000000000
+                },
+                {
+                    "id": "avalanche",
+                    "symbol": "AVAX",
+                    "name": "Avalanche",
+                    "market_cap": 19000000000
+                }
+            ]
+        },
+        {
+            "date": "2025-12-29",
+            "items": [
+                {
+                    "id": "bitcoin",
+                    "symbol": "BTC",
+                    "name": "Bitcoin",
+                    "market_cap": 1150000000000
+                },
+                {
+                    "id": "ethereum",
+                    "symbol": "ETH",
+                    "name": "Ethereum",
+                    "market_cap": 530000000000
+                },
+                {
+                    "id": "tether",
+                    "symbol": "USDT",
+                    "name": "Tether",
+                    "market_cap": 92000000000
+                },
+                {
+                    "id": "solana",
+                    "symbol": "SOL",
+                    "name": "Solana",
+                    "market_cap": 90000000000
+                },
+                {
+                    "id": "bnb",
+                    "symbol": "BNB",
+                    "name": "BNB",
+                    "market_cap": 80000000000
+                },
+                {
+                    "id": "xrp",
+                    "symbol": "XRP",
+                    "name": "XRP",
+                    "market_cap": 42000000000
+                },
+                {
+                    "id": "dogecoin",
+                    "symbol": "DOGE",
+                    "name": "Dogecoin",
+                    "market_cap": 38000000000
+                },
+                {
+                    "id": "usdc",
+                    "symbol": "USDC",
+                    "name": "USDC",
+                    "market_cap": 37000000000
+                },
+                {
+                    "id": "cardano",
+                    "symbol": "ADA",
+                    "name": "Cardano",
+                    "market_cap": 27000000000
+                },
+                {
+                    "id": "avalanche",
+                    "symbol": "AVAX",
+                    "name": "Avalanche",
+                    "market_cap": 21000000000
+                }
+            ]
+        },
+        {
+            "date": "2025-12-30",
+            "items": [
+                {
+                    "id": "bitcoin",
+                    "symbol": "BTC",
+                    "name": "Bitcoin",
+                    "market_cap": 1130000000000
+                },
+                {
+                    "id": "ethereum",
+                    "symbol": "ETH",
+                    "name": "Ethereum",
+                    "market_cap": 520000000000
+                },
+                {
+                    "id": "tether",
+                    "symbol": "USDT",
+                    "name": "Tether",
+                    "market_cap": 92000000000
+                },
+                {
+                    "id": "solana",
+                    "symbol": "SOL",
+                    "name": "Solana",
+                    "market_cap": 88000000000
+                },
+                {
+                    "id": "bnb",
+                    "symbol": "BNB",
+                    "name": "BNB",
+                    "market_cap": 81000000000
+                },
+                {
+                    "id": "dogecoin",
+                    "symbol": "DOGE",
+                    "name": "Dogecoin",
+                    "market_cap": 45000000000
+                },
+                {
+                    "id": "xrp",
+                    "symbol": "XRP",
+                    "name": "XRP",
+                    "market_cap": 43000000000
+                },
+                {
+                    "id": "usdc",
+                    "symbol": "USDC",
+                    "name": "USDC",
+                    "market_cap": 37000000000
+                },
+                {
+                    "id": "cardano",
+                    "symbol": "ADA",
+                    "name": "Cardano",
+                    "market_cap": 28000000000
+                },
+                {
+                    "id": "avalanche",
+                    "symbol": "AVAX",
+                    "name": "Avalanche",
+                    "market_cap": 22000000000
+                }
+            ]
+        },
+        {
+            "date": "2025-12-31",
+            "items": [
+                {
+                    "id": "bitcoin",
+                    "symbol": "BTC",
+                    "name": "Bitcoin",
+                    "market_cap": 1180000000000
+                },
+                {
+                    "id": "ethereum",
+                    "symbol": "ETH",
+                    "name": "Ethereum",
+                    "market_cap": 540000000000
+                },
+                {
+                    "id": "tether",
+                    "symbol": "USDT",
+                    "name": "Tether",
+                    "market_cap": 93000000000
+                },
+                {
+                    "id": "solana",
+                    "symbol": "SOL",
+                    "name": "Solana",
+                    "market_cap": 95000000000
+                },
+                {
+                    "id": "bnb",
+                    "symbol": "BNB",
+                    "name": "BNB",
+                    "market_cap": 82000000000
+                },
+                {
+                    "id": "dogecoin",
+                    "symbol": "DOGE",
+                    "name": "Dogecoin",
+                    "market_cap": 48000000000
+                },
+                {
+                    "id": "xrp",
+                    "symbol": "XRP",
+                    "name": "XRP",
+                    "market_cap": 44000000000
+                },
+                {
+                    "id": "usdc",
+                    "symbol": "USDC",
+                    "name": "USDC",
+                    "market_cap": 38000000000
+                },
+                {
+                    "id": "avalanche",
+                    "symbol": "AVAX",
+                    "name": "Avalanche",
+                    "market_cap": 30000000000
+                },
+                {
+                    "id": "cardano",
+                    "symbol": "ADA",
+                    "name": "Cardano",
+                    "market_cap": 29000000000
+                }
+            ]
+        },
+        {
+            "date": "2026-01-01",
+            "items": [
+                {
+                    "id": "bitcoin",
+                    "symbol": "BTC",
+                    "name": "Bitcoin",
+                    "market_cap": 1200000000000
+                },
+                {
+                    "id": "ethereum",
+                    "symbol": "ETH",
+                    "name": "Ethereum",
+                    "market_cap": 550000000000
+                },
+                {
+                    "id": "tether",
+                    "symbol": "USDT",
+                    "name": "Tether",
+                    "market_cap": 94000000000
+                },
+                {
+                    "id": "solana",
+                    "symbol": "SOL",
+                    "name": "Solana",
+                    "market_cap": 100000000000
+                },
+                {
+                    "id": "bnb",
+                    "symbol": "BNB",
+                    "name": "BNB",
+                    "market_cap": 84000000000
+                },
+                {
+                    "id": "dogecoin",
+                    "symbol": "DOGE",
+                    "name": "Dogecoin",
+                    "market_cap": 55000000000
+                },
+                {
+                    "id": "xrp",
+                    "symbol": "XRP",
+                    "name": "XRP",
+                    "market_cap": 45000000000
+                },
+                {
+                    "id": "usdc",
+                    "symbol": "USDC",
+                    "name": "USDC",
+                    "market_cap": 38000000000
+                },
+                {
+                    "id": "avalanche",
+                    "symbol": "AVAX",
+                    "name": "Avalanche",
+                    "market_cap": 32000000000
+                },
+                {
+                    "id": "cardano",
+                    "symbol": "ADA",
+                    "name": "Cardano",
+                    "market_cap": 30000000000
+                }
+            ]
+        },
+        {
+            "date": "2026-01-02",
+            "items": [
+                {
+                    "id": "bitcoin",
+                    "symbol": "BTC",
+                    "name": "Bitcoin",
+                    "market_cap": 1234567890000
+                },
+                {
+                    "id": "ethereum",
+                    "symbol": "ETH",
+                    "name": "Ethereum",
+                    "market_cap": 560000000000
+                },
+                {
+                    "id": "tether",
+                    "symbol": "USDT",
+                    "name": "Tether",
+                    "market_cap": 95000000000
+                },
+                {
+                    "id": "solana",
+                    "symbol": "SOL",
+                    "name": "Solana",
+                    "market_cap": 123456789000
+                },
+                {
+                    "id": "bnb",
+                    "symbol": "BNB",
+                    "name": "BNB",
+                    "market_cap": 85000000000
+                },
+                {
+                    "id": "dogecoin",
+                    "symbol": "DOGE",
+                    "name": "Dogecoin",
+                    "market_cap": 60000000000
+                },
+                {
+                    "id": "xrp",
+                    "symbol": "XRP",
+                    "name": "XRP",
+                    "market_cap": 46000000000
+                },
+                {
+                    "id": "usdc",
+                    "symbol": "USDC",
+                    "name": "USDC",
+                    "market_cap": 39000000000
+                },
+                {
+                    "id": "avalanche",
+                    "symbol": "AVAX",
+                    "name": "Avalanche",
+                    "market_cap": 35000000000
+                },
+                {
+                    "id": "cardano",
+                    "symbol": "ADA",
+                    "name": "Cardano",
+                    "market_cap": 31000000000
+                }
+            ]
+        }
+    ],
+    "today_top_movers": {
+        "gainers": [
+            {
+                "id": "solana",
+                "symbol": "SOL",
+                "name": "Solana",
+                "price": 185.45,
+                "change_24h_pct": 12.5,
+                "market_cap": 123456789000
+            },
+            {
+                "id": "dogecoin",
+                "symbol": "DOGE",
+                "name": "Dogecoin",
+                "price": 0.42,
+                "change_24h_pct": 9.8,
+                "market_cap": 60000000000
+            },
+            {
+                "id": "avalanche",
+                "symbol": "AVAX",
+                "name": "Avalanche",
+                "price": 45.30,
+                "change_24h_pct": 8.2,
+                "market_cap": 35000000000
+            }
+        ],
+        "losers": [
+            {
+                "id": "pepe",
+                "symbol": "PEPE",
+                "name": "Pepe",
+                "price": 0.000012,
+                "change_24h_pct": -5.6,
+                "market_cap": 5000000000
+            },
+            {
+                "id": "xrp",
+                "symbol": "XRP",
+                "name": "XRP",
+                "price": 0.85,
+                "change_24h_pct": -2.1,
+                "market_cap": 46000000000
+            },
+            {
+                "id": "bnb",
+                "symbol": "BNB",
+                "name": "BNB",
+                "price": 580.12,
+                "change_24h_pct": -1.5,
+                "market_cap": 85000000000
+            }
+        ]
+    },
+    "dominance": {
+        "series": [
+            {
+                "date": "2025-12-27",
+                "btc_pct": 49.1,
+                "eth_pct": 17.2,
+                "stable_pct": 8.4
+            },
+            {
+                "date": "2025-12-28",
+                "btc_pct": 49.3,
+                "eth_pct": 17.1,
+                "stable_pct": 8.3
+            },
+            {
+                "date": "2025-12-29",
+                "btc_pct": 49.5,
+                "eth_pct": 17.0,
+                "stable_pct": 8.2
+            },
+            {
+                "date": "2025-12-30",
+                "btc_pct": 49.6,
+                "eth_pct": 16.9,
+                "stable_pct": 8.3
+            },
+            {
+                "date": "2025-12-31",
+                "btc_pct": 49.8,
+                "eth_pct": 16.9,
+                "stable_pct": 8.5
+            },
+            {
+                "date": "2026-01-01",
+                "btc_pct": 50.1,
+                "eth_pct": 16.8,
+                "stable_pct": 8.8
+            },
+            {
+                "date": "2026-01-02",
+                "btc_pct": 50.4,
+                "eth_pct": 16.8,
+                "stable_pct": 9.1
+            }
+        ]
+    }
+}
