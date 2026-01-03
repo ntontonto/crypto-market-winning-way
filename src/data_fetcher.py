@@ -102,67 +102,10 @@ class CryptoDataFetcher:
         today = datetime.utcnow().date()
         dates = [(today - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]
             
-        # 3. Calculate Dominance History (based on Top 30)
-        print("Calculating dominance history (from sum of Top 30)...")
-        dominance_series = []
-        stable_ids = ["tether", "usd-coin", "dai", "first-digital-usd", "ethena-usde"] 
-        
-        for d in dates:
-            day_total_cap = 0
-            btc_cap = 0
-            eth_cap = 0
-            stable_cap = 0
-            
-            for c_id, hist in history_map.items():
-                # Access market_caps
-                cap = hist.get('market_caps', {}).get(d, 0)
-                day_total_cap += cap
-                
-                if c_id == "bitcoin":
-                    btc_cap = cap
-                elif c_id == "ethereum":
-                    eth_cap = cap
-                elif c_id in stable_ids:
-                    stable_cap += cap
-            
-            if day_total_cap > 0:
-                dominance_series.append({
-                    "date": d,
-                    "btc_pct": round((btc_cap / day_total_cap) * 100, 1),
-                    "eth_pct": round((eth_cap / day_total_cap) * 100, 1),
-                    "stable_pct": round((stable_cap / day_total_cap) * 100, 1)
-                })
-        
-        # 4. Construct Output
-        top10_7d = []
-        for d in dates:
-            daily_snapshot = []
-            for coin in current_top:
-                c_id = coin['id']
-                mcap = history_map.get(c_id, {}).get('market_caps', {}).get(d, 0)
-                price = history_map.get(c_id, {}).get('prices', {}).get(d, 0)
-                img_path = icon_map.get(c_id, "")
-                
-                if mcap > 0:
-                    daily_snapshot.append({
-                        "id": c_id,
-                        "symbol": coin['symbol'].upper(),
-                        "name": coin['name'],
-                        "market_cap": mcap,
-                        "price": price,
-                        "image": img_path
-                    })
-            daily_snapshot.sort(key=lambda x: x['market_cap'], reverse=True)
-            top10_7d.append({
-                "date": d,
-                "items": daily_snapshot 
-            })
-            
         # 5. Build "weekly_top_movers" AND "top30_metrics"
         # We calculate change from first date to last available date
         import statistics
 
-        movers_list = []
         metrics_list = []
         
         start_date = dates[0]
@@ -176,24 +119,6 @@ class CryptoDataFetcher:
             prices = history_map.get(c_id, {}).get('prices', {})
             sorted_dates = sorted(prices.keys())
             
-            # --- 5a. Weekly Movers Logic ---
-            change_7d = 0
-            curr_price = 0
-            if sorted_dates:
-                p_start = prices[sorted_dates[0]]
-                p_end = prices[sorted_dates[-1]]
-                curr_price = p_end
-                if p_start > 0:
-                    change_7d = ((p_end - p_start) / p_start) * 100
-                    
-            movers_list.append({
-                "id": c_id,
-                "name": coin['name'],
-                "symbol": sym,
-                "price": curr_price,
-                "change_7d_pct": change_7d,
-                "image": img_path
-            })
             
             # --- 5b. Metrics Calculation ---
             sorted_prices_val = [prices[d] for d in sorted_dates if prices[d] > 0]
@@ -231,11 +156,6 @@ class CryptoDataFetcher:
                 }
             })
 
-        sorted_movers = sorted(movers_list, key=lambda x: x['change_7d_pct'], reverse=True)
-        weekly_top_movers = {
-            "gainers": sorted_movers[:3],
-            "losers": sorted_movers[-3:][::-1] # Bottom 3 reversed (worst first)
-        }
         
         # --- 5c. Movers 24h (from current_top) ---
         # existing current_top has price_change_percentage_24h
@@ -265,13 +185,8 @@ class CryptoDataFetcher:
         final_json = {
             "asOf": datetime.utcnow().isoformat() + "Z",
             "currency": "usd",
-            "top10_7d": top10_7d,
-            "weekly_top_movers": weekly_top_movers,
             "movers_24h": movers_24h,
             "top30_metrics": metrics_list,
-            "dominance": {
-                "series": dominance_series
-            },
             "btc_series": btc_series,
             "eth_series": eth_series,
             "btc_24h": btc_24h,

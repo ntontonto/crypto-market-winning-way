@@ -88,7 +88,6 @@ def main():
     
     # Scene Selection
     scene_name = "CryptoPlayboardShorts"
-    # scene_name = "CryptoRankingShorts" # Legacy
     
     cmd = [
         "manim",
