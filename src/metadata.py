@@ -5,10 +5,6 @@ class VideoMetadataGenerator:
     def __init__(self, input_data):
         self.data = input_data
         self.as_of = input_data.get("asOf", "").split("T")[0]
-        # Support both keys for backward compatibility or schema variance
-        self.top_movers = input_data.get("weekly_top_movers") or input_data.get("today_top_movers", {})
-        self.gainers = self.top_movers.get("gainers", [])
-        self.losers = self.top_movers.get("losers", [])
 
     def get_title(self) -> str:
         """
