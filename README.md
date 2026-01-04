@@ -7,14 +7,37 @@ Automatically generates a 60-second YouTube Short (9:16) visualizing:
 
 ## Requirements
 
-*   **System**: macOS (tested on Apple Silicon)
+*   **System**: Windows (primary) / macOS (legacy support)
 *   **Tools**:
-    *   Python 3.9+
-    *   [Homebrew](https://brew.sh/)
-    *   FFmpeg (installed via brew)
-    *   Manim (installed via brew)
+    *   **Windows**: Python 3.11
+    *   **macOS**: Python 3.9+, [Homebrew](https://brew.sh/), FFmpeg, Manim (via brew)
 
 ## Installation
+
+### 🚀 Windows (Automated Setup)
+
+> [!TIP]
+> **One-command setup** - Everything is automated!
+
+```cmd
+setup.bat
+```
+
+This automatically:
+- ✅ Detects Python 3.11
+- ✅ Creates `.venv` virtual environment
+- ✅ Upgrades pip
+- ✅ Installs av (prebuilt binary)
+- ✅ Installs manim and all dependencies
+- ✅ Verifies installation
+
+**Requirements**: Python 3.11 must be installed ([Download](https://www.python.org/downloads/))
+
+**Manual steps not required** - No need for Visual C++ Build Tools or FFmpeg installation!
+
+For details, see [SETUP.md](SETUP.md).
+
+### macOS (Legacy - Manual Setup)
 
 1.  **Install System Dependencies**:
     ```bash
@@ -36,8 +59,25 @@ Automatically generates a 60-second YouTube Short (9:16) visualizing:
     # Install Python dependencies
     pip install -r requirements.txt
     ```
+    
+    Alternatively, use the automated script:
+    ```bash
+    chmod +x setup.sh
+    ./setup.sh
+    ```
 
 ## Usage
+
+### Windows
+
+Simply run:
+```cmd
+run_pipeline.bat
+```
+
+This will fetch data, generate video, and upload to YouTube.
+
+### macOS / Cross-Platform
 
 1.  **Activate Environment** (if not active):
     ```bash
