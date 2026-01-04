@@ -3,6 +3,8 @@ import json
 import argparse
 import subprocess
 import shutil
+import sys
+import io
 from datetime import datetime
 from src.data_fetcher import CryptoDataFetcher
 from src.audio_processor import AudioProcessor
@@ -10,6 +12,16 @@ from src.youtube_uploader import YouTubeUploader
 from src.metadata import VideoMetadataGenerator
 
 def main():
+    # Task Scheduler / cmd.exe often runs with cp932 output, which can crash on emoji.
+    # Force UTF-8 output or replace unencodable characters to avoid UnicodeEncodeError.
+    try:
+        if hasattr(sys.stdout, "buffer"):
+            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+        if hasattr(sys.stderr, "buffer"):
+            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
     parser = argparse.ArgumentParser(description="Crypto Ranking Video Generator")
     parser.add_argument("--dry-run", action="store_true", help="Fetch data only, skip video generation")
     parser.add_argument("--input", type=str, help="Path to input JSON file (skips fetching)")
@@ -24,6 +36,13 @@ def main():
     # YouTube Upload Arguments
     parser.add_argument("--upload", action="store_true", help="Upload final video to YouTube")
     parser.add_argument("--privacy", type=str, default="private", choices=["private", "unlisted", "public"], help="Privacy status for YouTube upload")
+    parser.add_argument("--token-file", type=str, default="token.json", help="Path to token file (JSON recommended)")
+    parser.add_argument("--client-secrets", type=str, default="client_secrets.json", help="Path to OAuth client secrets JSON")
+    parser.add_argument(
+        "--non-interactive",
+        action="store_true",
+        help="Disable interactive OAuth (fails fast if token is missing/invalid; recommended for Task Scheduler).",
+    )
 
     
     args = parser.parse_args()
@@ -76,9 +95,12 @@ def main():
 
     print("--- 2. Generating Video (Manim) ---")
     
-    # Check Manim availability
-    if not shutil.which("manim"):
-        print("Error: 'manim' command not found. Please install Manim (brew install manim).")
+    # Check Manim availability (use python -m manim)
+    manim_check_cmd = [sys.executable, "-m", "manim", "--version"]
+    try:
+        subprocess.run(manim_check_cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    except Exception:
+        print("Error: 'manim' module not found or not working in this Python environment.")
         return
 
     # Derive output filename from data date
@@ -90,7 +112,7 @@ def main():
     scene_name = "CryptoPlayboardShorts"
     
     cmd = [
-        "manim",
+        sys.executable, "-m", "manim",
         "-qh", # High quality (1080p)
         "--resolution", "1080,1920", # Vertical
         "--media_dir", "./out_temp",
@@ -179,7 +201,6 @@ def main():
             print(f"Title: {video_title}")
             print(f"Description Preview:\n{video_description[:100]}...")
 
-            uploader = YouTubeUploader()
             try:
                 # Note: The uploader.upload_video method in previous step didn't explicitly take tags arg in some versions
                 # checking src/youtube_uploader.py content in memory... 
@@ -194,6 +215,11 @@ def main():
                 # Let's assume I will update uploader.py in next step or use what I have.
                 # For now, I'll pass title and description.
                 
+                uploader = YouTubeUploader(
+                    client_secrets_file=args.client_secrets,
+                    token_file=args.token_file,
+                    interactive=not args.non_interactive,
+                )
                 uploader.upload_video(
                     file_path=final_video_path,
                     title=video_title,
